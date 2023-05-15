@@ -22,6 +22,9 @@ export class HeroComponent implements OnInit {
       }
     );
     console.log(this.data);
+    setInterval(() => {
+      this.next();
+    }, 3000);
   }
   pos = 0;
   next() {
@@ -37,5 +40,6 @@ export class HeroComponent implements OnInit {
       this.pos = this.heroData.length - 1;
     }
   }
+
   constructor(private service: AppService) {}
 }
