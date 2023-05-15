@@ -12,16 +12,16 @@ export class HeroComponent implements OnInit {
   ngOnInit() {
     this.service.GetData('https://picsum.photos/v2/list').subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.data = res;
-        console.log(this.data.slice(0, 5), 'this is api data');
-        this.heroData = this.data.reverse().slice(0, 5);
+        // console.log(this.data.slice(0, 8), 'this is api data');
+        this.heroData = this.data.reverse().slice(0, 8);
       },
       (err) => {
         console.log(err);
       }
     );
-    console.log(this.data);
+    // console.log(this.data);
     setInterval(() => {
       this.next();
     }, 3000);

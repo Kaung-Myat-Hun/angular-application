@@ -9,11 +9,9 @@
 .heroCard{
   min-width: 100vw;
   min-height: 100%;
-  transition: all 0.3s ease-in-out;
 }
 .hide{
   display: none;
-  transition: all 0.3s ease-in-out;
 }
 .heroContainer{
   position: relative;
