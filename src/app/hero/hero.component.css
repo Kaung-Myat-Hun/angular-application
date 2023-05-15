@@ -7,7 +7,30 @@
 .heroCard{
   min-width: 100vw;
   min-height: 100%;
+  transition: all 0.3s ease-in-out;
 }
 .hide{
   display: none;
+  transition: all 0.3s ease-in-out;
+}
+.heroContainer{
+  position: relative;
+}
+button{
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(127, 255, 212, 0.514);
+  border: none;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-50%);
+}
+button:last-child{
+  right: 0;
+}
+button:hover{
+  cursor: pointer;
+  background-color: rgba(127, 255, 212, 0.76);
 }
