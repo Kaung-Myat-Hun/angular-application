@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   title = 'testing-app';
+
   constructor(private app: AppService) {}
   testing() {
     this.app.GetData('https://jsonplaceholder.typicode.com/posts').subscribe(
