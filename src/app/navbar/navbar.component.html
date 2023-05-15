@@ -1,4 +1,5 @@
-<nav class="nav-container">
+<nav [ngClass]="fix ? 'fix' : ''"
+	class="nav-container">
 	<ul class="navbar-list">
 		<li class="nav-items">
 			<a ariaCurrentWhenActive="page"
