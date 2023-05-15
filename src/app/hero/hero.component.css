@@ -1,0 +1,13 @@
+.carousel-container{
+  height: 70vh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+}
+.heroCard{
+  min-width: 100vw;
+  min-height: 100%;
+}
+.hide{
+  display: none;
+}

@@ -1,0 +1,17 @@
+<div>
+	<div class="heroContainer">
+
+		<div class="carousel-container">
+			<div *ngFor="let item of heroData let i = index"
+				[ngClass]="i === pos ? '' : 'hide' "
+				class="heroCard">
+				<h2>{{item.title}}</h2>
+				<strong>{{item.id}}</strong>
+				<p>{{item.img}}</p>
+			</div>
+		</div>
+
+	</div>
+	<button (click)="prev()"><</button>
+	<button (click)="next()">></button>
+</div>
