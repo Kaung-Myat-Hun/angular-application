@@ -3,7 +3,7 @@
 
 		<div class="carousel-container">
 			<div *ngFor="let item of heroData let i = index"
-				[ngClass]="i === pos ? '' : 'hide' "
+				[ngClass]="i === pos ? 'fade' : 'hide ' "
 				class="heroCard">
 				<h2>{{item.author}}</h2>
 				<!-- <strong>{{item.id}}</strong -->
