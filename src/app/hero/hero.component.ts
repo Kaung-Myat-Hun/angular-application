@@ -24,7 +24,7 @@ export class HeroComponent implements OnInit {
     // console.log(this.data);
     setInterval(() => {
       this.next();
-    }, 3000);
+    }, 5000);
   }
   pos = 0;
   next() {
