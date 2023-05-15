@@ -5,9 +5,12 @@
 			<div *ngFor="let item of heroData let i = index"
 				[ngClass]="i === pos ? '' : 'hide' "
 				class="heroCard">
-				<h2>{{item.title}}</h2>
-				<strong>{{item.id}}</strong>
-				<p>{{item.img}}</p>
+				<h2>{{item.author}}</h2>
+				<!-- <strong>{{item.id}}</strong -->
+				<img src="{{item?.download_url}}"
+					style="width: 70%; height: 95%"
+					alt>
+				<!-- <p>{{item.img}}</p> -->
 			</div>
 		</div>
 

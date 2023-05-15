@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-hero',
@@ -6,28 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent implements OnInit {
-  heroData = [
-    {
-      id: 1,
-      title: 'page 1',
-      img: 'testing url 1',
-    },
-    {
-      id: 2,
-      title: 'page 2',
-      img: 'testing url 2',
-    },
-    {
-      id: 3,
-      title: 'page 3',
-      img: 'testing url 3',
-    },
-    {
-      id: 4,
-      title: 'page 4',
-      img: 'testing url 4',
-    },
-  ];
+  heroData: any = [];
+  data: any = [];
+  ngOnInit() {
+    this.service.GetData('https://picsum.photos/v2/list').subscribe(
+      (res) => {
+        console.log(res);
+        this.data = res;
+        console.log(this.data.slice(0, 5), 'this is api data');
+        this.heroData = this.data.reverse().slice(0, 5);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    console.log(this.data);
+  }
   pos = 0;
   next() {
     if (this.pos > this.heroData.length - 2) {
@@ -42,5 +37,5 @@ export class HeroComponent implements OnInit {
       this.pos = this.heroData.length - 1;
     }
   }
-  ngOnInit() {}
+  constructor(private service: AppService) {}
 }
