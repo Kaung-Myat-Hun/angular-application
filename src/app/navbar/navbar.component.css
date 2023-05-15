@@ -7,10 +7,18 @@
   display: flex;
   list-style-type: none;
 }
-.nav-items{
-  padding: 15px 20px;
+.nav-items a{
+  display: block;
+  padding: 20px 30px;
   transition: all 0.3s ease-in-out;
+}
+.nav-items a{
+  text-decoration: none;
+  color: #000;
 }
 .nav-items:hover{
   cursor: pointer;
+}
+.activeButton{
+  color: crimson !important;
 }

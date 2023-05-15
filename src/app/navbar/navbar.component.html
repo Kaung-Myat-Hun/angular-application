@@ -1,13 +1,24 @@
 <nav class="nav-container">
 	<ul class="navbar-list">
 		<li class="nav-items">
-			<a routerLink="/">Home</a>
+			<a ariaCurrentWhenActive="page"
+				routerLink="/">
+				Home
+			</a>
 		</li>
 		<li class="nav-items">
-			<a routerLink="/detail">Detail</a>
+			<a routerLinkActive="activeButton"
+				ariaCurrentWhenActive="page"
+				routerLink="/detail">
+				Detail
+			</a>
 		</li>
 		<li class="nav-items">
-			<a routerLink="/contact">Contact</a>
+			<a routerLinkActive="activeButton"
+				ariaCurrentWhenActive="page"
+				routerLink="/contact">
+				Contact
+			</a>
 		</li>
 	</ul>
 </nav>
