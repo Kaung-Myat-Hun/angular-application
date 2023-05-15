@@ -7,6 +7,7 @@ import { AppService } from '../app.service';
   styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent implements OnInit {
+  // slider function start
   heroData: any = [];
   data: any = [];
   ngOnInit() {
@@ -24,7 +25,7 @@ export class HeroComponent implements OnInit {
     // console.log(this.data);
     setInterval(() => {
       this.next();
-    }, 5000);
+    }, 4000);
   }
   pos = 0;
   next() {
@@ -40,6 +41,8 @@ export class HeroComponent implements OnInit {
       this.pos = this.heroData.length - 1;
     }
   }
+
+  // slider function end
 
   constructor(private service: AppService) {}
 }
