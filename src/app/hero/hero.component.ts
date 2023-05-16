@@ -8,12 +8,15 @@ import { AppService } from '../app.service';
 })
 export class HeroComponent implements OnInit {
   // ************** slider function start ****************
-  heroData: any = [];
-  data: any = [];
+
+  heroData: any = []; // this is for view
+  data: any = []; // this is for data handling
+
   @Input() start: number = 0;
   @Input() limit: number = 8;
   @Input() nReverse: boolean = true;
   @Input() urlString: string = '';
+
   ngOnInit() {
     this.service.GetData(this.urlString).subscribe(
       (res) => {
