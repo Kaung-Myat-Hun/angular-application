@@ -7,7 +7,7 @@ import { AppService } from '../app.service';
   styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent implements OnInit {
-  // slider function start
+  // ************** slider function start ****************
   heroData: any = [];
   data: any = [];
   @Input() start: number = 0;
@@ -50,7 +50,7 @@ export class HeroComponent implements OnInit {
     }
   }
 
-  // slider function end
+  //**********************  slider function end *****************************
 
   constructor(private service: AppService) {}
 }
