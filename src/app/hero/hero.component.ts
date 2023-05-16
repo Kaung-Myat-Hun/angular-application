@@ -13,8 +13,9 @@ export class HeroComponent implements OnInit {
   @Input() start: number = 0;
   @Input() limit: number = 8;
   @Input() nReverse: boolean = true;
+  @Input() urlString: string = '';
   ngOnInit() {
-    this.service.GetData('https://picsum.photos/v2/list').subscribe(
+    this.service.GetData(this.urlString).subscribe(
       (res) => {
         // console.log(res);
         this.data = res;
