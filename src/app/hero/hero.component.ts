@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from '../app.service';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'image-slider',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css'],
 })
@@ -10,13 +10,20 @@ export class HeroComponent implements OnInit {
   // slider function start
   heroData: any = [];
   data: any = [];
+  @Input() start: number = 0;
+  @Input() limit: number = 8;
+  @Input() nReverse: boolean = true;
   ngOnInit() {
     this.service.GetData('https://picsum.photos/v2/list').subscribe(
       (res) => {
         // console.log(res);
         this.data = res;
         // console.log(this.data.slice(0, 8), 'this is api data');
-        this.heroData = this.data.reverse().slice(0, 8);
+        if (this.nReverse) {
+          this.heroData = this.data.reverse().slice(this.start, this.limit);
+        } else {
+          this.heroData = this.data.slice(this.start, this.limit);
+        }
       },
       (err) => {
         console.log(err);
