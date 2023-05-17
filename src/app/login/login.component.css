@@ -1,0 +1,53 @@
+.flex{
+  display: flex;
+}
+.content-center{
+  justify-content: center;
+}
+.form-container{
+  width: 80vw !important;
+  height: 80vh !important;
+  /* background-color: bisque; */
+  margin: auto;
+}
+.formLogin, .formRegister{
+  width: 50%;
+  text-align: center;
+  background: #948181;
+}
+.hide{
+  display: none;
+}
+
+.changeForm{
+  color: #007bff;
+}
+.changeForm:hover{
+  cursor: pointer;
+}
+.loginContainer , .registerContainer{
+  width: 80vw !important;
+}
+
+.loginAnimate{
+  animation: loginAnimate 1s 1 linear ;
+}
+.registerAnimate{
+  animation: registerAnimate 1s 1 linear;
+}
+.formRegister1{
+  width: 50%;
+  text-align: center;
+}
+
+@keyframes loginAnimate {
+  0%{transform: translateX(0); }
+  70%{transform: translateX(80%);}
+  100%{transform: translateX(100%);}
+}
+
+@keyframes registerAnimate {
+  0%{transform: translateX(0); }
+  70%{transform: translateX(-80%);}
+  100%{transform: translateX(-100%);}
+}

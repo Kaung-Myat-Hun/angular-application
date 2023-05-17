@@ -1,0 +1,50 @@
+<div class="form-container flex content-center">
+
+	<div [ngClass]="hide ? '' : 'hide'"
+		class="flex loginContainer">
+		<form [ngClass]="animate? '' : 'loginAnimate'"
+			class="formLogin"
+			action="login()">
+			<input type="text"
+				placeholder="Enter Username or ID">
+			<input type="password"
+				placeholder="Enter Password">
+			<button>Login</button>
+			<p>
+				Haven't account?
+				<br>
+				Signup
+				<span (click)="changeForm1()"
+					class="changeForm">
+					here
+				</span>
+			</p>
+		</form>
+		<div class="formRegister1">Login form</div>
+	</div>
+
+	<div [ngClass]="hide ? 'hide' : ''"
+		class="flex registerContainer ">
+		<div class="formRegister1">Register form</div>
+		<form [ngClass]="animate? 'registerAnimate' : ''"
+			class="formRegister"
+			action="register()">
+			<input type="text"
+				placeholder="Enter Username or ID">
+			<input type="password"
+				placeholder="Enter Password">
+			<button>Register</button>
+			<p>
+				Already have an account?
+				<br>
+				Login
+				<span (click)="changeForm2()"
+					class="changeForm">
+					here
+				</span>
+			</p>
+		</form>
+
+	</div>
+
+</div>
