@@ -25,6 +25,7 @@ export class LoginComponent {
     this.animate = false;
     setTimeout(() => {
       this.hide = false;
+      this.resetHandler();
     }, 500);
   }
   changeForm2() {
@@ -32,6 +33,7 @@ export class LoginComponent {
     this.animate = true;
     setTimeout(() => {
       this.hide = true;
+      this.resetHandler();
     }, 500);
   }
 
@@ -83,9 +85,12 @@ export class LoginComponent {
 
   // rest input value function
   resetHandler() {
+    this.rUserName = '';
     this.email = '';
     this.password = '';
     this.confirmPass = '';
+    this.userName = '';
+    this.lPassword = '';
     this.passwordNotSame = false;
     this.passwordSame = false;
     this.validateEmail = false;
