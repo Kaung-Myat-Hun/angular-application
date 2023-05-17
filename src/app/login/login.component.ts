@@ -50,6 +50,7 @@ export class LoginComponent {
     this.resetHandler();
   }
 
+  // rest input value function
   resetHandler() {
     this.email = '';
     this.password = '';
@@ -63,6 +64,7 @@ export class LoginComponent {
     this.email = e.target.value;
   }
 
+  // check email validate
   passwordHandler(e: any) {
     this.password = e.target.value;
     let validate =
@@ -81,6 +83,7 @@ export class LoginComponent {
       return;
     }
   }
+  // password validate
   passwordValidate() {
     if (this.password !== this.confirmPass) {
       this.passwordSame = false;
