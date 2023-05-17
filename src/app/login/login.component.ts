@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,8 @@ export class LoginComponent {
   confirmPass: string = '';
   passwordSame: boolean = false;
   passwordNotSame: boolean = false;
+  email: string = '';
+  validateEmail: boolean = false;
   // form change slide animation function 1 / 2
   changeForm1() {
     this.hide = true;
@@ -44,10 +47,31 @@ export class LoginComponent {
     alert('register success');
     e.preventDefault();
     this.changeForm2();
+    this.resetHandler();
+  }
+
+  resetHandler() {
+    this.email = '';
+    this.password = '';
+    this.confirmPass = '';
+    this.passwordNotSame = false;
+    this.passwordSame = false;
+    this.validateEmail = false;
+  }
+
+  emailHandler(e: any) {
+    this.email = e.target.value;
   }
 
   passwordHandler(e: any) {
     this.password = e.target.value;
+    let validate =
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (this.email.match(validate)) {
+      this.validateEmail = true;
+    } else {
+      this.validateEmail = false;
+    }
   }
   conPasswordHandler(e: any) {
     this.confirmPass = e.target.value;

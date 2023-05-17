@@ -42,26 +42,38 @@
 	<div [ngClass]="hide ? 'hide' : ''"
 		class="flex registerContainer ">
 		<div class="formRegister2"></div>
+
 		<form [ngClass]="animate? 'registerAnimate' : ''"
 			(ngSubmit)="register($event)"
 			class="formRegister">
 			<h3 class="formTitle">Register</h3>
+
 			<input type="text"
 				class="input"
 				placeholder="Enter Username or ID">
-			<input type="email"
+
+			<input [ngClass]="validateEmail ? 'validateInput' : ''"
+				[value]="email"
+				(input)="emailHandler($event)"
+				type="email"
 				class="input"
-				placeholder="Enter Email">
+				placeholder="Enter Email"
+				formControlName="primaryEmail">
+
 			<input [type]="showPass ? 'text' : 'password'"
 				[ngClass]="passwordSame ? 'validateInput' : passwordNotSame ? 'dangerInput' : '' "
+				[value]="password"
 				(input)="passwordHandler($event)"
 				class="input"
 				placeholder="Enter Password">
+
 			<input [type]="showPass ? 'text' : 'password'"
 				[ngClass]="passwordSame ? 'validateInput' : passwordNotSame ? 'dangerInput' : '' "
+				[value]="confirmPass"
 				(input)="conPasswordHandler($event)"
 				class="input"
 				placeholder="Enter Confirm Password">
+
 			<p [ngClass]="passwordSame ? '' : 'hide'"
 				for
 				class="textGreen">
