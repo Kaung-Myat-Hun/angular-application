@@ -7,13 +7,16 @@
 			(ngSubmit)="loginFunction($event)"
 			class="formLogin">
 			<h3 class="formTitle">Login</h3>
+
 			<input type="text"
 				class="input"
 				placeholder="Enter Username or ID">
+
 			<input [type]="showPass ? 'text' : 'password'"
 				class="input"
 				placeholder="Enter Password">
 			<br>
+
 			<input type="checkbox"
 				id="showPass">
 			<label (click)="showPassword()"
