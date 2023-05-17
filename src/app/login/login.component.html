@@ -1,5 +1,6 @@
 <div class="form-container flex content-center">
 
+	<!-- login form -->
 	<div [ngClass]="hide ? '' : 'hide'"
 		class="flex loginContainer">
 		<form [ngClass]="animate? '' : 'loginAnimate'"
@@ -27,7 +28,7 @@
 			<p class="textAcc">
 				Haven't account?
 				<br>
-				Signup
+				Register
 				<span (click)="changeForm1()"
 					class="changeForm">
 					here
@@ -37,6 +38,7 @@
 		<div class="formRegister1"></div>
 	</div>
 
+	<!-- register form -->
 	<div [ngClass]="hide ? 'hide' : ''"
 		class="flex registerContainer ">
 		<div class="formRegister2"></div>
@@ -51,11 +53,20 @@
 				class="input"
 				placeholder="Enter Email">
 			<input [type]="showPass ? 'text' : 'password'"
+				[ngClass]="passwordSame ? 'validateInput' : passwordNotSame ? 'dangerInput' : '' "
+				(input)="passwordHandler($event)"
 				class="input"
 				placeholder="Enter Password">
 			<input [type]="showPass ? 'text' : 'password'"
+				[ngClass]="passwordSame ? 'validateInput' : passwordNotSame ? 'dangerInput' : '' "
+				(input)="conPasswordHandler($event)"
 				class="input"
 				placeholder="Enter Confirm Password">
+			<p [ngClass]="passwordSame ? '' : 'hide'"
+				for
+				class="textGreen">
+				*Password Same
+			</p>
 			<br>
 			<input type="checkbox"
 				id="showPass1">
@@ -78,7 +89,6 @@
 				</span>
 			</p>
 		</form>
-
 	</div>
 
 </div>

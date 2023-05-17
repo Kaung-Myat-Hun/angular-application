@@ -18,8 +18,8 @@
 .formLogin, .formRegister{
   width: 50%;
   text-align: center;
-  background: #cecece;
-  border-radius: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
   margin-top: 40px;
   z-index: 10;
 }
@@ -63,6 +63,24 @@
   font-weight: 500;
   font-size: 0.8rem;
   margin: 30px 0px;
+}
+.dangerInput{
+  border: 1px solid crimson;
+}
+.validateInput{
+  border: 1px solid lime;
+}
+.textGreen{
+  color: lime;
+  font-size: 0.7rem;
+  font-weight: 400;
+  margin: -13px 0px;
+}
+#showPass1{
+  margin: -10px 0px;
+}
+#showPass1:hover{
+  cursor: pointer;
 }
 
 .loginAnimate{

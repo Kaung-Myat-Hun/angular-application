@@ -10,6 +10,10 @@ export class LoginComponent {
   animate: boolean = true;
   showPass: boolean = false;
 
+  password: string = '';
+  confirmPass: string = '';
+  passwordSame: boolean = false;
+  passwordNotSame: boolean = false;
   // form change slide animation function 1 / 2
   changeForm1() {
     this.hide = true;
@@ -40,5 +44,26 @@ export class LoginComponent {
     alert('register success');
     e.preventDefault();
     this.changeForm2();
+  }
+
+  passwordHandler(e: any) {
+    this.password = e.target.value;
+  }
+  conPasswordHandler(e: any) {
+    this.confirmPass = e.target.value;
+    if (this.confirmPass !== '') {
+      this.passwordValidate();
+    } else {
+      return;
+    }
+  }
+  passwordValidate() {
+    if (this.password !== this.confirmPass) {
+      this.passwordSame = false;
+      this.passwordNotSame = true;
+    } else {
+      this.passwordSame = true;
+      this.passwordNotSame = false;
+    }
   }
 }
