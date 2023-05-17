@@ -9,13 +9,14 @@ export class LoginComponent {
   hide: boolean = true;
   animate: boolean = true;
   showPass: boolean = false;
+
+  // form change slide animation function 1 / 2
   changeForm1() {
     this.hide = true;
     this.animate = false;
     setTimeout(() => {
       this.hide = false;
     }, 500);
-    // console.log(this.hide, 'click login');
   }
   changeForm2() {
     this.hide = false;
@@ -23,13 +24,14 @@ export class LoginComponent {
     setTimeout(() => {
       this.hide = true;
     }, 500);
-
-    // console.log(this.hide, 'click register');
   }
 
+  // show password function
   showPassword() {
     this.showPass = !this.showPass;
   }
+
+  // form submitting functions
   loginFunction(e: any) {
     e.preventDefault();
     window.location.assign('/home');
