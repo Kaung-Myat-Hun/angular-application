@@ -3,7 +3,7 @@
 	<ul class="navbar-list">
 		<li class="nav-items">
 			<a ariaCurrentWhenActive="page"
-				routerLink="/">
+				routerLink="/home">
 				Home
 			</a>
 		</li>
@@ -21,12 +21,9 @@
 				Contact
 			</a>
 		</li>
-		<!-- <li class="nav-items">
-			<a routerLinkActive="activeButton"
-				ariaCurrentWhenActive="page"
-				routerLink="/login">
-				Login/Sign Up
-			</a>
-		</li> -->
+		<li (click)="logoutHandler()"
+			class="nav-items">
+			<a>Logout</a>
+		</li>
 	</ul>
 </nav>

@@ -8,11 +8,15 @@
 			class="formLogin">
 			<h3 class="formTitle">Login</h3>
 
-			<input type="text"
+			<input [value]="userName"
+				(input)="userNameHandler($event)"
+				type="text"
 				class="input"
 				placeholder="Enter Username or ID">
 
 			<input [type]="showPass ? 'text' : 'password'"
+				[value]="lPassword"
+				(input)="lPasswordHandler($event)"
 				class="input"
 				placeholder="Enter Password">
 			<br>

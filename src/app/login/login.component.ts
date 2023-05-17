@@ -10,7 +10,8 @@ export class LoginComponent {
   hide: boolean = true;
   animate: boolean = true;
   showPass: boolean = false;
-
+  userName: string = '';
+  lPassword: string = '';
   email: string = '';
   password: string = '';
   confirmPass: string = '';
@@ -37,11 +38,23 @@ export class LoginComponent {
   showPassword() {
     this.showPass = !this.showPass;
   }
+  userNameHandler(e: any) {
+    this.userName = e.target.value;
+  }
+  lPasswordHandler(e: any) {
+    this.lPassword = e.target.value;
+  }
 
   // form submitting functions
   loginFunction(e: any) {
     e.preventDefault();
-    window.location.assign('/home');
+    if (this.userName === 'admin' && this.lPassword === 'admin') {
+      localStorage.setItem('token', 'user');
+      window.location.assign('/home');
+    } else {
+      alert('wrong user name and password');
+      window.location.reload();
+    }
   }
   register(e: any) {
     alert('register success');

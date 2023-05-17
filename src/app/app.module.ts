@@ -14,6 +14,8 @@ import { HeroComponent } from './hero/hero.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,11 @@ import { Validators } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

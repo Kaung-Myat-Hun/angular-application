@@ -15,4 +15,9 @@ export class NavbarComponent implements OnInit {
       window.pageYOffset >= 65 ? (this.fix = true) : (this.fix = false);
     });
   }
+
+  logoutHandler() {
+    localStorage.clear();
+    window.location.assign('/');
+  }
 }
