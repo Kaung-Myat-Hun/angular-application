@@ -13,12 +13,36 @@
 .formLogin, .formRegister{
   width: 50%;
   text-align: center;
-  background: #948181;
+  background: #cecece;
+  border-radius: 10px;
+}
+.input{
+  width: 60%;
+  padding: 15px 10px;
+  border: none;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.input:focus{
+  outline: #7f7f7f60;
 }
 .hide{
   display: none;
 }
-
+.formTitle{
+  margin: 100px 0px 40px 0px;
+  font-size: 40px;
+  color: #4c4c4c;
+}
+.formBtn{
+  width: 40%;
+  padding: 10px 0px;
+  background-color: #3093fd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 50px 60px 30px;
+}
 .changeForm{
   color: #007bff;
 }
@@ -27,6 +51,11 @@
 }
 .loginContainer , .registerContainer{
   width: 80vw !important;
+}
+.textAcc{
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin: 30px 0px;
 }
 
 .loginAnimate{
@@ -38,6 +67,9 @@
 .formRegister1{
   width: 50%;
   text-align: center;
+  background-image: url('../../assets/pic/spot-personal-information.png');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @keyframes loginAnimate {
@@ -50,4 +82,13 @@
   0%{transform: translateX(0); }
   70%{transform: translateX(-80%);}
   100%{transform: translateX(-100%);}
+}
+
+@media screen and (max-width: 600px) {
+  .formRegister1{
+    display: none;
+  }
+  .formLogin, .formRegister{
+    width: 100%;
+  }
 }

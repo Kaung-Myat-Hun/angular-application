@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   hide: boolean = true;
   animate: boolean = true;
-
+  showPass: boolean = false;
   changeForm1() {
     this.hide = true;
     this.animate = false;
@@ -25,5 +25,9 @@ export class LoginComponent {
     }, 500);
 
     // console.log(this.hide, 'click register');
+  }
+
+  showPassword() {
+    this.showPass = !this.showPass;
   }
 }

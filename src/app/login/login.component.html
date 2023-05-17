@@ -5,12 +5,23 @@
 		<form [ngClass]="animate? '' : 'loginAnimate'"
 			class="formLogin"
 			action="login()">
+			<h3 class="formTitle">Login</h3>
 			<input type="text"
+				class="input"
 				placeholder="Enter Username or ID">
-			<input type="password"
+			<input [type]="showPass ? 'text' : 'password'"
+				class="input"
 				placeholder="Enter Password">
-			<button>Login</button>
-			<p>
+			<br>
+			<input type="checkbox"
+				id="showPass">
+			<label (click)="showPassword()"
+				for="showPass">
+				ShowPassword
+			</label>
+			<br>
+			<button class="formBtn">Login</button>
+			<p class="textAcc">
 				Haven't account?
 				<br>
 				Signup
@@ -20,21 +31,38 @@
 				</span>
 			</p>
 		</form>
-		<div class="formRegister1">Login form</div>
+		<div class="formRegister1"></div>
 	</div>
 
 	<div [ngClass]="hide ? 'hide' : ''"
 		class="flex registerContainer ">
-		<div class="formRegister1">Register form</div>
+		<div class="formRegister1"></div>
 		<form [ngClass]="animate? 'registerAnimate' : ''"
 			class="formRegister"
 			action="register()">
+			<h3 class="formTitle">Register</h3>
 			<input type="text"
+				class="input"
 				placeholder="Enter Username or ID">
-			<input type="password"
+			<input type="email"
+				class="input"
+				placeholder="Enter Email">
+			<input [type]="showPass ? 'text' : 'password'"
+				class="input"
 				placeholder="Enter Password">
-			<button>Register</button>
-			<p>
+			<input [type]="showPass ? 'text' : 'password'"
+				class="input"
+				placeholder="Enter Confirm Password">
+			<br>
+			<input type="checkbox"
+				id="showPass1">
+			<label (click)="showPassword()"
+				for="showPass1">
+				ShowPassword
+			</label>
+			<br>
+			<button class="formBtn">Register</button>
+			<p class="textAcc">
 				Already have an account?
 				<br>
 				Login
