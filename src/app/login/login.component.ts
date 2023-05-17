@@ -11,12 +11,12 @@ export class LoginComponent {
   animate: boolean = true;
   showPass: boolean = false;
 
+  email: string = '';
   password: string = '';
   confirmPass: string = '';
+  validateEmail: boolean = false;
   passwordSame: boolean = false;
   passwordNotSame: boolean = false;
-  email: string = '';
-  validateEmail: boolean = false;
   // form change slide animation function 1 / 2
   changeForm1() {
     this.hide = true;
