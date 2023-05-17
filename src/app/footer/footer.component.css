@@ -4,6 +4,9 @@ footer{
   color: #fff;
   text-align: center;
   height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 footer p {
   display: block;
