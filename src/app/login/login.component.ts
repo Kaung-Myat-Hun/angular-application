@@ -41,6 +41,7 @@ export class LoginComponent {
   showPassword() {
     this.showPass = !this.showPass;
   }
+  //input data fetching
   userNameHandler(e: any) {
     this.userName = e.target.value;
   }
@@ -49,6 +50,40 @@ export class LoginComponent {
   }
   rUserNameHandler(e: any) {
     this.rUserName = e.target.value;
+  }
+
+  emailHandler(e: any) {
+    this.email = e.target.value;
+  }
+
+  // check email validate
+  passwordHandler(e: any) {
+    this.password = e.target.value;
+    let validate =
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //email regular expression
+    if (this.email.match(validate)) {
+      this.validateEmail = true;
+    } else {
+      this.validateEmail = false;
+    }
+  }
+  conPasswordHandler(e: any) {
+    this.confirmPass = e.target.value;
+    if (this.confirmPass !== '') {
+      this.passwordValidate();
+    } else {
+      return;
+    }
+  }
+  // password validate
+  passwordValidate() {
+    if (this.password !== this.confirmPass) {
+      this.passwordSame = false;
+      this.passwordNotSame = true;
+    } else {
+      this.passwordSame = true;
+      this.passwordNotSame = false;
+    }
   }
 
   // form submitting functions
@@ -94,39 +129,5 @@ export class LoginComponent {
     this.passwordNotSame = false;
     this.passwordSame = false;
     this.validateEmail = false;
-  }
-
-  emailHandler(e: any) {
-    this.email = e.target.value;
-  }
-
-  // check email validate
-  passwordHandler(e: any) {
-    this.password = e.target.value;
-    let validate =
-      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //email regular expression
-    if (this.email.match(validate)) {
-      this.validateEmail = true;
-    } else {
-      this.validateEmail = false;
-    }
-  }
-  conPasswordHandler(e: any) {
-    this.confirmPass = e.target.value;
-    if (this.confirmPass !== '') {
-      this.passwordValidate();
-    } else {
-      return;
-    }
-  }
-  // password validate
-  passwordValidate() {
-    if (this.password !== this.confirmPass) {
-      this.passwordSame = false;
-      this.passwordNotSame = true;
-    } else {
-      this.passwordSame = true;
-      this.passwordNotSame = false;
-    }
   }
 }
