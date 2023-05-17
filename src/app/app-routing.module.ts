@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
   { path: 'detail', component: DetailComponent, canActivate: [AuthGuard] },
   { path: '', component: LoginComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent, redirectTo: '' },
 ];
 
 @NgModule({

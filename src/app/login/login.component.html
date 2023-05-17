@@ -55,9 +55,11 @@
 			class="formRegister">
 			<h3 class="formTitle">Register</h3>
 
-			<input type="text"
+			<input [value]="rUserName"
+				(input)="rUserNameHandler($event)"
+				type="text"
 				class="input"
-				placeholder="Enter Username or ID">
+				placeholder="Enter Username">
 
 			<input [ngClass]="validateEmail ? 'validateInput' : ''"
 				[value]="email"

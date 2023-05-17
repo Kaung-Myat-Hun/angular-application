@@ -12,6 +12,7 @@ export class LoginComponent {
   showPass: boolean = false;
   userName: string = '';
   lPassword: string = '';
+  rUserName: string = '';
   email: string = '';
   password: string = '';
   confirmPass: string = '';
@@ -44,23 +45,40 @@ export class LoginComponent {
   lPasswordHandler(e: any) {
     this.lPassword = e.target.value;
   }
+  rUserNameHandler(e: any) {
+    this.rUserName = e.target.value;
+  }
 
   // form submitting functions
   loginFunction(e: any) {
     e.preventDefault();
-    if (this.userName === 'admin' && this.lPassword === 'admin') {
-      localStorage.setItem('token', 'user');
-      window.location.assign('/home');
+    if (this.userName !== '' && this.lPassword !== '') {
+      if (this.userName === 'admin' && this.lPassword === 'admin') {
+        localStorage.setItem('token', 'user');
+        window.location.assign('/home');
+      } else {
+        alert('Wrong user name and password');
+        window.location.reload();
+      }
     } else {
-      alert('wrong user name and password');
-      window.location.reload();
+      alert('Please Enter All Data!');
     }
   }
+
   register(e: any) {
-    alert('register success');
     e.preventDefault();
-    this.changeForm2();
-    this.resetHandler();
+    if (
+      this.email !== '' &&
+      this.password !== '' &&
+      this.confirmPass !== '' &&
+      this.rUserName !== ''
+    ) {
+      this.changeForm2();
+      this.resetHandler();
+      alert('register success');
+    } else {
+      alert('Please Enter All Data!');
+    }
   }
 
   // rest input value function
