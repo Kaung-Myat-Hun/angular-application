@@ -49,6 +49,11 @@
   border: none;
   border-radius: 5px;
   margin: 50px 60px 30px;
+  transition: all 0.3s ease-in-out;
+}
+.formBtn:hover{
+  cursor: pointer;
+  background-color: #007bff;
 }
 .changeForm{
   color: #007bff;
