@@ -30,10 +30,10 @@
 }
 
 .loginAnimate{
-  animation: loginAnimate 1s 1 linear ;
+  animation: loginAnimate 520ms 1 linear ;
 }
 .registerAnimate{
-  animation: registerAnimate 1s 1 linear;
+  animation: registerAnimate 520ms 1 linear;
 }
 .formRegister1{
   width: 50%;

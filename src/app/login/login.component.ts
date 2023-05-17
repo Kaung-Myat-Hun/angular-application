@@ -14,7 +14,7 @@ export class LoginComponent {
     this.animate = false;
     setTimeout(() => {
       this.hide = false;
-    }, 1000);
+    }, 500);
     // console.log(this.hide, 'click login');
   }
   changeForm2() {
@@ -22,7 +22,7 @@ export class LoginComponent {
     this.animate = true;
     setTimeout(() => {
       this.hide = true;
-    }, 1000);
+    }, 500);
 
     // console.log(this.hide, 'click register');
   }
