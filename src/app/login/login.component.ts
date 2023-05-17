@@ -81,7 +81,7 @@ export class LoginComponent {
   passwordHandler(e: any) {
     this.password = e.target.value;
     let validate =
-      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //email regular expression
     if (this.email.match(validate)) {
       this.validateEmail = true;
     } else {
