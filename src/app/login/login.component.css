@@ -21,6 +21,7 @@
   background: #cecece;
   border-radius: 10px;
   margin-top: 40px;
+  z-index: 10;
 }
 .input{
   width: 60%;
@@ -70,12 +71,20 @@
 .registerAnimate{
   animation: registerAnimate 520ms 1 linear;
 }
-.formRegister1{
+.formRegister1,.formRegister2{
   width: 50%;
   text-align: center;
-  background-image: url('../../assets/pic/spot-personal-information.png');
   background-position: center;
   background-repeat: no-repeat;
+  z-index: -1;
+}
+.formRegister1{
+  background-image: url('../../assets/pic/spot-personal-information.png');
+}
+.formRegister2{
+  background-image: url('../../assets/pic/register.svg');
+  background-size: 30%;
+
 }
 
 @keyframes loginAnimate {
