@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -29,5 +29,14 @@ export class LoginComponent {
 
   showPassword() {
     this.showPass = !this.showPass;
+  }
+  loginFunction(e: any) {
+    e.preventDefault();
+    window.location.assign('/home');
+  }
+  register(e: any) {
+    alert('register success');
+    e.preventDefault();
+    this.changeForm2();
   }
 }

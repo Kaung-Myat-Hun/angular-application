@@ -3,8 +3,8 @@
 	<div [ngClass]="hide ? '' : 'hide'"
 		class="flex loginContainer">
 		<form [ngClass]="animate? '' : 'loginAnimate'"
-			class="formLogin"
-			action="login()">
+			(ngSubmit)="loginFunction($event)"
+			class="formLogin">
 			<h3 class="formTitle">Login</h3>
 			<input type="text"
 				class="input"
@@ -20,7 +20,10 @@
 				ShowPassword
 			</label>
 			<br>
-			<button class="formBtn">Login</button>
+			<button (click)="loginFunction($event)"
+				class="formBtn">
+				Login
+			</button>
 			<p class="textAcc">
 				Haven't account?
 				<br>
@@ -38,8 +41,8 @@
 		class="flex registerContainer ">
 		<div class="formRegister2"></div>
 		<form [ngClass]="animate? 'registerAnimate' : ''"
-			class="formRegister"
-			action="register()">
+			(ngSubmit)="register($event)"
+			class="formRegister">
 			<h3 class="formTitle">Register</h3>
 			<input type="text"
 				class="input"
@@ -61,7 +64,10 @@
 				ShowPassword
 			</label>
 			<br>
-			<button class="formBtn">Register</button>
+			<button (click)="register($event)"
+				class="formBtn">
+				Register
+			</button>
 			<p class="textAcc">
 				Already have an account?
 				<br>
