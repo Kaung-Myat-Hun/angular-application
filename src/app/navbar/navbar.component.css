@@ -31,3 +31,9 @@
 .hide{
   display: none;
 }
+.content-between{
+  justify-content: space-between;
+}
+.flex{
+  display: flex;
+}

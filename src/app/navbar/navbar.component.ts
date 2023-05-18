@@ -16,11 +16,7 @@ export class NavbarComponent implements OnInit {
     });
     let location = window.location.pathname;
     // console.log(location, 'current-url');
-    if (location === '/') {
-      this.hide = true;
-    } else {
-      this.hide = false;
-    }
+    this.hide = location === '/' ? true : false;
   }
 
   logoutHandler() {

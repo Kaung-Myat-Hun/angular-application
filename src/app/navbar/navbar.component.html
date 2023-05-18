@@ -1,4 +1,5 @@
-<div [ngClass]="hide ? 'hide': ''">
+<div [ngClass]="hide ? 'hide': ''"
+	class="flex content-between">
 	<nav [ngClass]="fix ? 'fix' : ''"
 		class="nav-container">
 		<ul class="navbar-list">
@@ -22,10 +23,10 @@
 					Contact
 				</a>
 			</li>
-			<li (click)="logoutHandler()"
-				class="nav-items">
-				<a>Logout</a>
-			</li>
 		</ul>
 	</nav>
+	<div (click)="logoutHandler()"
+		class="nav-items">
+		<a>Logout</a>
+	</div>
 </div>
