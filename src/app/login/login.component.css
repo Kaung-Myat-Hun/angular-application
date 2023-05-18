@@ -1,3 +1,6 @@
+*{
+  overflow: hidden;
+}
 .flex{
   display: flex;
 }
@@ -6,7 +9,7 @@
 }
 .form-container{
   width: 80vw !important;
-  height: 90vh !important;
+  height: 89.5vh !important;
   background-color: #fff;
   margin: 20px auto;
   padding: 30px 0px;
@@ -100,7 +103,6 @@
 .formRegister2{
   background-image: url('../../assets/pic/register.svg');
   background-size: 30%;
-
 }
 
 @keyframes loginAnimate {

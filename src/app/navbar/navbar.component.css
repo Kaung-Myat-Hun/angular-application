@@ -29,11 +29,14 @@
   left: 0;
 }
 .hide{
-  display: none;
+  display: none !important;
 }
 .content-between{
   justify-content: space-between;
 }
 .flex{
   display: flex;
+}
+.logo{
+
 }
