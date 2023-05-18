@@ -1,29 +1,31 @@
-<nav [ngClass]="fix ? 'fix' : ''"
-	class="nav-container">
-	<ul class="navbar-list">
-		<li class="nav-items">
-			<a ariaCurrentWhenActive="page"
-				routerLink="/home">
-				Home
-			</a>
-		</li>
-		<li class="nav-items">
-			<a routerLinkActive="activeButton"
-				ariaCurrentWhenActive="page"
-				routerLink="/detail">
-				Detail
-			</a>
-		</li>
-		<li class="nav-items">
-			<a routerLinkActive="activeButton"
-				ariaCurrentWhenActive="page"
-				routerLink="/contact">
-				Contact
-			</a>
-		</li>
-		<li (click)="logoutHandler()"
-			class="nav-items">
-			<a>Logout</a>
-		</li>
-	</ul>
-</nav>
+<div [ngClass]="hide ? 'hide': ''">
+	<nav [ngClass]="fix ? 'fix' : ''"
+		class="nav-container">
+		<ul class="navbar-list">
+			<li class="nav-items">
+				<a ariaCurrentWhenActive="page"
+					routerLink="/home">
+					Home
+				</a>
+			</li>
+			<li class="nav-items">
+				<a routerLinkActive="activeButton"
+					ariaCurrentWhenActive="page"
+					routerLink="/detail">
+					Detail
+				</a>
+			</li>
+			<li class="nav-items">
+				<a routerLinkActive="activeButton"
+					ariaCurrentWhenActive="page"
+					routerLink="/contact">
+					Contact
+				</a>
+			</li>
+			<li (click)="logoutHandler()"
+				class="nav-items">
+				<a>Logout</a>
+			</li>
+		</ul>
+	</nav>
+</div>
